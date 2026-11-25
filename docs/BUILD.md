@@ -1,6 +1,6 @@
 # 构建与签名
 
-主入口为 `tools/build_android.py`，无需 Gradle。目标为 arm64-v8a、minSdk 26、targetSdk 35；版本代码 13，版本名称 `0.12.1-horizontal-clean`。
+使用 `tools/build_android.py` 构建，不需要 Gradle。目标为 arm64-v8a、minSdk 26、targetSdk 35；版本代码 13，版本名称 `0.12.1-horizontal-clean`。
 
 ## 环境
 
@@ -23,7 +23,7 @@ python3 -B tools/check_release.py
 python3 -B tools/build_android.py vpn --jobs 2
 ```
 
-GitHub Actions 使用 Ubuntu 24.04、JDK 17 与上述 SDK/NDK 组件。Linux ARM64 主机若不能运行 NDK 自带的主机编译器，可提供本机 `clang-18`/`lld-18`；此分支及 WSL2 尚未在本次发布中验证。
+GitHub Actions 使用 Ubuntu 24.04、JDK 17 与上述 SDK/NDK 组件。Linux ARM64 主机若不能运行 NDK 自带的主机编译器，可提供本机 `clang-18`/`lld-18`；该分支和 WSL2 尚未测试。
 
 ## Windows PowerShell
 
@@ -36,7 +36,7 @@ python -B tools/check_release.py
 python -B tools/build_android.py vpn --jobs 2
 ```
 
-脚本处理 `.exe` 工具名、UTF-8 编码和当前工作目录下的相对路径。本次已在含中文路径的 Windows 工作目录完成构建。使用 WSL2 时，应在 WSL2 内安装 Linux 版工具，不混用 Windows 与 Linux 可执行文件。
+Windows 构建已通过，包括含中文的工作目录。使用 WSL2 时，应在 WSL2 内安装 Linux 版工具，不混用 Windows 与 Linux 可执行文件。
 
 ## 输出
 
@@ -47,7 +47,7 @@ dist/vpn-build.json
 dist/udp-aim.apk.sha256
 ```
 
-脚本编译 Java、JNI、zdtun 与 zstd 的 common/decompress/compress 源码，生成 DEX、APK，并验证签名。构建报告记录产物指纹、源文件指纹和执行范围。`UDP_AIM_BUILD_DIR`、`UDP_AIM_DIST_DIR` 可将构建及成品放到仓库之外。构建不会安装 APK 或启动设备应用。
+脚本编译 Java、JNI、zdtun 与 zstd 的 common/decompress/compress 源码，生成 DEX、APK，并验证签名。构建报告记录 APK 和源文件的哈希。`UDP_AIM_BUILD_DIR`、`UDP_AIM_DIST_DIR` 可将构建及成品放到仓库之外。构建不会安装 APK 或启动设备应用。
 
 ## 签名
 
@@ -57,6 +57,6 @@ dist/udp-aim.apk.sha256
 
 ## 可选离线程序集工具
 
-`tools/il/` 含两个 .NET 8 工程及完整源码。构建时由使用者自行提供 `Mono.Cecil.dll`，通过 `CecilPath` 指定，见[工具说明](../tools/il/README.md)。两个工具只读取文件，不执行被分析的程序集；游戏程序集及第三方 DLL 不随源码发布。这两个可选工具未在本次发布中构建。
+`tools/il/` 含两个 .NET 8 工程及完整源码。构建时由使用者自行提供 `Mono.Cecil.dll`，通过 `CecilPath` 指定，见[工具说明](../tools/il/README.md)。两个工具只读取文件，不执行被分析的程序集；游戏程序集及第三方 DLL 不随源码发布。这两个可选工具尚未构建测试。
 
-源码检查、编译和签名通过的范围见[验证记录](VALIDATION.md)，设备效果仍需独立验证。
+已测试的环境和结果见[测试记录](VALIDATION.md)。
