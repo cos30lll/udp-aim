@@ -1,0 +1,16 @@
+{
+  "status": "source_release_build_passed_not_runtime_tested",
+  "variant": "vpn",
+  "sha256": "3b0a6c4d8cc495c94f5dcfec3bc7b199db925d6eb96cda2843b6c1d3c8bd840f",
+  "size": 328671,
+  "package": "local.udp.esp.vpn",
+  "version_code": 13,
+  "time_utc": "2026-11-25T01:47:22.494045+00:00",
+  "signing": "local_development_new_key_not_original_release",
+  "installed": false,
+  "launched": false,
+  "vpn_started": false,
+  "game_started": false,
+  "version_name": "0.12.1-horizontal-clean",
+  "source_runtime_verification": "not_executed"
+}

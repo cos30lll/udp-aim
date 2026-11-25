@@ -1,0 +1,2 @@
+* text=auto eol=lf
+vpn/native/third_party/** -text

@@ -1,0 +1,29 @@
+{
+  "baseline": "r12",
+  "scope": "horizontal implementation; release-only diagnostic and presentation cleanup",
+  "core_files_match_r12_build": {
+    "GameDecoder.java": true,
+    "GameState.java": true,
+    "Projection.java": true,
+    "OverlayConfig.java": true,
+    "NearestTarget.java": true,
+    "ViewRewrite.java": true,
+    "RotationRewrite.java": true,
+    "VpnNative.java": true
+  },
+  "removed_files": [
+    "RunLog.java",
+    "RotationDiagnostics.java"
+  ],
+  "modified_runtime_files": [
+    "GameVpnService.java",
+    "LiveRuntime.java",
+    "MainActivity.java",
+    "OverlayService.java",
+    "AndroidManifest.xml",
+    "res/values/strings.xml"
+  ],
+  "game_runtime_tested_after_cleanup": false,
+  "raw_samples_included": false,
+  "private_signing_keys_included": false
+}

@@ -1,0 +1,14 @@
+UDP Aim
+Project-owned source is distributed under GPL-3.0-or-later. See LICENSE.
+Vendored dependencies retain their copyright notices and licenses.
+- zdtun: Emanuele Faranda, LGPL-3.0-or-later.
+- Zstandard v1.5.7: Meta Platforms, Inc. and affiliates; BSD-3-Clause option.
+- Bundled headers retain their respective source notices.
+
+Game names and protocol identifiers identify the interoperability target.
+No game binaries, game resources, private captures, runtime identity records
+or signing keys are included. This project is not affiliated with the publisher.
+
+The horizontal-follow behavior was reported working on the original r12 build.
+This source cleanup changes presentation and removes persistent diagnostics.
+Rebuilt packages require their own runtime verification and signing key.
